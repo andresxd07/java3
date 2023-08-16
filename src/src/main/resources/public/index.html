@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    
+    <!-- Agregar enlaces CDN de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Task Manager</h1>
+        
+        <!-- Formulario para agregar tareas -->
+        <form action="/addTask" method="post">
+            <input type="text" name="task" class="form-control" placeholder="Enter task">
+            <button type="submit" class="btn btn-primary mt-2">Add Task</button>
+        </form>
+        
+        <!-- Lista de tareas -->
+        <ul class="list-group mt-3">
+            <#list tasks as task>
+                <li class="list-group-item">${task}</li>
+            </#list>
+        </ul>
+    </div>
+
+    <!-- Agregar scripts de Bootstrap (jQuery requerido) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
