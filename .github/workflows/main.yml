@@ -23,7 +23,6 @@ jobs:
     - name: Fusionar cambios automáticamente en la rama prueba2
       run: |
         git fetch origin
-        git checkout prueba2
-        git merge origin/prueba -m "Automatically merge changes from prueba to prueba2"
-        
-        git push origin prueba2
+        git checkout -B prueba2 origin/prueba
+
+        git push origin prueba2 -f
