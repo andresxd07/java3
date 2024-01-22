@@ -1,0 +1,29 @@
+name: Implementación Automática
+
+on:
+  push:
+    branches:
+      - prueba
+
+jobs:
+  implementacion:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Verificar cambios en la rama de prueba
+      uses: actions/checkout@v4
+      with:
+        ref: prueba
+
+    - name: Configurar Git
+      run: |
+        git config user.email "aandresarango087@gmail.com"
+        git config user.name "Andrres"
+
+    - name: Fusionar cambios automáticamente en la rama prueba2
+      run: |
+        git fetch origin
+        git checkout prueba2
+        git merge origin/prueba -m "Automatically merge changes from prueba to prueba2"
+        
+        git push origin prueba2
