@@ -11,6 +11,8 @@ public class TaskManagerApp {
         // Configuración para servir archivos estáticos desde la carpeta 'public'
         staticFiles.location("/public");
 
+        asasa
+
         // Lista para almacenar las tareas
         List<String> tasks = new ArrayList<>();
 
